@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halfday Media — Influencer Marketing &amp; Content Agency | Australia</title>
+<meta name="description" content="Halfday Media is an Australian influencer marketing and content production agency. We connect brands with curated creators, manage campaigns end-to-end, and produce photography and video that drives real results.">
+<meta name="keywords" content="influencer marketing agency australia, content production agency brisbane, brand photography, social media marketing, creator campaigns, influencer management">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sky: #d4edff;
+    --sky-deep: #b8dff7;
+    --red: #bb1519;
+    --red-light: #f5e0e0;
+    --white: #ffffff;
+    --off: #f7fbff;
+    --warm: #fff8f0;
+    --gold: #e8a020;
+    --gold-light: #fdf3e0;
+    --sage: #e8f2ec;
+    --sage-mid: #4a8c62;
+    --ink: #111111;
+    --ink-mid: #333333;
+    --muted: #777777;
+    --border: #e0e8ef;
+    --border-strong: #c0d4e4;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Times New Roman', 'TimesNewRomanPS-BoldMT', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 3rem;
+    background: var(--sky);
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .nav-logo img {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--ink-mid);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--red); }
+
+  .nav-cta {
+    background: var(--red) !important;
+    color: var(--white) !important;
+    padding: 0.55rem 1.4rem !important;
+    letter-spacing: 0.07em !important;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85 !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 4.5rem;
+  }
+
+  .hero-left {
+    padding: 5rem 3.5rem 5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 400;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--red);
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .hero-title .accent { color: var(--red); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 420px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-ghost {
+    color: var(--ink);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn-ghost:hover { color: var(--red); }
+
+  .hero-right {
+    background: var(--sky);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4rem 3rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right-logo {
+    width: 70%;
+    max-width: 320px;
+    opacity: 0.12;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-tags-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+  }
+
+  .hero-stat-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-stat {
+    background: white;
+    padding: 1.25rem 1.5rem;
+    flex: 1;
+    border: 1px solid var(--border-strong);
+  }
+
+  .hero-stat-num {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--red);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-stat-lbl {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hero-tag-item {
+    background: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--ink);
+    transition: background 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .hero-tag-item:hover {
+    background: #edf6ff;
+    border-left-color: var(--red);
+  }
+
+  .hero-tag-item .arrow { color: var(--red); }
+
+  /* ── MARQUEE ── */
+  .marquee-strip {
+    background: var(--red);
+    color: var(--white);
+    padding: 0.75rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-flex;
+    gap: 2rem;
+    animation: marquee 32s linear infinite;
+  }
+
+  .marquee-inner span {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .marquee-inner .dot { color: var(--sky); font-style: normal; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── SHARED SECTION ── */
+  section { padding: 6rem 3rem; border-bottom: 1px solid var(--border); }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 400;
+    margin-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  /* ── WHY SOCIAL MEDIA ── */
+  .social-section { background: var(--warm); }
+
+  .social-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .social-heading {
+    font-size: clamp(2rem, 3.2vw, 3.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .social-heading em { color: var(--red); font-style: italic; }
+
+  .social-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .social-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .social-stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .social-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+  }
+
+  .social-stat-big {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 3rem;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .social-stat-text {
+    font-size: 0.875rem;
+    color: var(--ink-mid);
+    line-height: 1.6;
+  }
+
+  .social-stat-source {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    display: block;
+    letter-spacing: 0.04em;
+  }
+
+  .social-points {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .social-point {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .social-point-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--sky);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--red);
+    font-size: 1rem;
+  }
+
+  .social-point-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .social-point-body {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── WHY US ── */
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .why-heading {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    position: sticky;
+    top: 7rem;
+  }
+
+  .why-heading em { color: var(--red); font-style: italic; }
+
+  .why-items { display: flex; flex-direction: column; }
+
+  .why-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .why-item:first-child { padding-top: 0; }
+
+  .why-num {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--red);
+    margin-top: 0.1rem;
+  }
+
+  .why-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .why-body { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--sky); }
+
+  .services-section .section-label { color: var(--red); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border-strong);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 0;
+    background: var(--red);
+    transition: height 0.25s;
+  }
+
+  .service-card:hover::after { height: 3px; }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 36px rgba(187,21,25,0.1);
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--red-light);
+    border: 1px solid #e8c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--red);
+  }
+
+  .service-name {
+    font-size: 1.35rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .service-body { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background: var(--white); }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .how-step {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  .how-step:last-child { border-right: none; }
+
+  .how-step-num {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 3rem;
+    color: var(--sky-deep);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .how-step-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .how-step-body { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── ABOUT / CREDIBILITY ── */
+  .about-section { background: var(--sky); }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-heading {
+    font-size: clamp(2rem, 3.2vw, 3.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-heading em { color: var(--red); }
+
+  .about-body {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .about-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .about-pill {
+    background: var(--white);
+    border: 1px solid var(--border-strong);
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    font-weight: 400;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-strong);
+    border: 1px solid var(--border-strong);
+  }
+
+  .about-stat {
+    padding: 2rem 1.75rem;
+    background: var(--white);
+  }
+
+  .about-stat-num {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .about-stat-lbl {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section { padding: 6rem 3rem; background: var(--white); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-heading {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-heading span { color: var(--red); }
+
+  .contact-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 360px;
+  }
+
+  .contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+  .contact-row { display: flex; flex-direction: column; gap: 0.2rem; }
+
+  .contact-lbl {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .contact-val {
+    color: var(--ink);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-val:hover { color: var(--red); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    background: var(--off);
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .form-group label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: var(--white);
+    border: 1px solid var(--border-strong);
+    color: var(--ink);
+    padding: 0.8rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--red); }
+
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  .form-submit {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { opacity: 0.85; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--sky);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .footer-logo img { height: 36px; width: auto; display: block; }
+
+  .footer-copy { font-size: 0.75rem; color: var(--muted); }
+
+  .footer-socials { display: flex; gap: 1.5rem; }
+
+  .footer-social-link {
+    font-size: 0.78rem;
+    color: var(--ink-mid);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-social-link:hover { color: var(--red); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 0.85rem 1.5rem; }
+    .nav-links li:not(:last-child) { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 1.5rem 3rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-right { min-height: 280px; padding: 2.5rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .social-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .social-stats { grid-template-columns: 1fr; }
+    .social-points { grid-template-columns: 1fr; }
+    .why-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .why-heading { position: static; }
+    .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .how-grid { grid-template-columns: 1fr 1fr; }
+    .how-step:nth-child(2) { border-right: none; }
+    .how-step:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+    .how-step:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+    .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-section { padding: 4rem 1.5rem; }
+    .hero-stat-row { flex-direction: column; gap: 0.75rem; }
+    footer { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" aria-label="Halfday Media Home">
+    <img src="logo.png" alt="Halfday Media" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#social">Why Social</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Australian Creative Agency · Est. 2025</p>
+    <h1 class="hero-title">
+      Your brand<br>deserves to be<br><span class="accent">seen, shared<br>&amp; remembered.</span>
+    </h1>
+    <p class="hero-sub">Halfday Media is an Australian influencer marketing and content production agency. We pair your brand with the right creators, produce content that converts, and manage every detail — so you don't have to.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Work with us</a>
+      <a href="#services" class="btn-ghost">What we do →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="logo.png" alt="" class="hero-right-logo" aria-hidden="true" />
+
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <span class="hero-stat-num">AU</span>
+        <span class="hero-stat-lbl">Nationwide reach</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">3</span>
+        <span class="hero-stat-lbl">Core services</span>
+      </div>
+    </div>
+
+    <div class="hero-tags-stack">
+      <div class="hero-tag-item">
+        <span>Influencer Marketing</span>
+        <span class="arrow">↗</span>
+      </div>
+      <div class="hero-tag-item">
+        <span>Content Production</span>
+        <span class="arrow">↗</span>
+      </div>
+      <div class="hero-tag-item">
+        <span>Photography &amp; Video</span>
+        <span class="arrow">↗</span>
+      </div>
+      <div class="hero-tag-item">
+        <span>Curated Creator Network</span>
+        <span class="arrow">↗</span>
+      </div>
+      <div class="hero-tag-item">
+        <span>End-to-End Campaign Management</span>
+        <span class="arrow">↗</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-inner">
+    <span>Influencer Marketing</span><span class="dot">·</span>
+    <span>Content Production</span><span class="dot">·</span>
+    <span>Photography</span><span class="dot">·</span>
+    <span>Video</span><span class="dot">·</span>
+    <span>Australia-Wide</span><span class="dot">·</span>
+    <span>Curated Creators</span><span class="dot">·</span>
+    <span>Fully Managed</span><span class="dot">·</span>
+    <span>Influencer Marketing</span><span class="dot">·</span>
+    <span>Content Production</span><span class="dot">·</span>
+    <span>Photography</span><span class="dot">·</span>
+    <span>Video</span><span class="dot">·</span>
+    <span>Australia-Wide</span><span class="dot">·</span>
+    <span>Curated Creators</span><span class="dot">·</span>
+    <span>Fully Managed</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- WHY SOCIAL MEDIA -->
+<section id="social" class="social-section">
+  <p class="section-label">Why social media marketing</p>
+  <div class="social-intro">
+    <h2 class="social-heading">Your customers are online. <em>Is your brand showing up?</em></h2>
+    <p class="social-sub">In 2025, social media isn't optional — it's where buying decisions are made. Australians spend an average of 1 hour 47 minutes on social platforms every day. The brands winning new customers aren't the ones with the biggest budgets. They're the ones with the most consistent, authentic, and compelling presence. That's exactly what we build.</p>
+  </div>
+
+  <div class="social-stats">
+    <div class="social-stat-card">
+      <span class="social-stat-big">21M+</span>
+      <p class="social-stat-text">Australians use social media actively — representing over 80% of the population.</p>
+      <span class="social-stat-source">DataReportal 2024</span>
+    </div>
+    <div class="social-stat-card">
+      <span class="social-stat-big">69%</span>
+      <p class="social-stat-text">of consumers say they've discovered a new brand or product through influencer content.</p>
+      <span class="social-stat-source">Nielsen Consumer Trust Index</span>
+    </div>
+    <div class="social-stat-card">
+      <span class="social-stat-big">11×</span>
+      <p class="social-stat-text">higher ROI from influencer marketing compared to traditional digital advertising formats.</p>
+      <span class="social-stat-source">Influencer Marketing Hub 2024</span>
+    </div>
+  </div>
+
+  <div class="social-points">
+    <div class="social-point">
+      <div class="social-point-icon">①</div>
+      <div>
+        <p class="social-point-title">Trust is built through creators, not ads</p>
+        <p class="social-point-body">Consumers trust people over brands. Influencer content drives authentic engagement that paid advertising simply can't replicate — especially among younger, highly connected audiences.</p>
+      </div>
+    </div>
+    <div class="social-point">
+      <div class="social-point-icon">②</div>
+      <div>
+        <p class="social-point-title">Content is your most valuable asset</p>
+        <p class="social-point-body">High-quality photography and video doesn't just perform on social — it elevates your website, Google listings, email campaigns, and every other channel your brand appears on.</p>
+      </div>
+    </div>
+    <div class="social-point">
+      <div class="social-point-icon">③</div>
+      <div>
+        <p class="social-point-title">Your competitors are already doing it</p>
+        <p class="social-point-body">Brands that invest in consistent creator content are building compounding visibility. Every campaign, post, and collaboration adds to their reach — while brands that wait fall further behind.</p>
+      </div>
+    </div>
+    <div class="social-point">
+      <div class="social-point-icon">④</div>
+      <div>
+        <p class="social-point-title">Results you can actually measure</p>
+        <p class="social-point-body">Unlike traditional advertising, influencer and content marketing gives you clear data — reach, engagement, link clicks, and conversions — so you always know what's working.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY HALFDAY -->
+<section id="why">
+  <p class="section-label">Why Halfday Media</p>
+  <div class="why-layout">
+    <h2 class="why-heading">We close the gap between what you've built and how the world <em>sees it.</em></h2>
+    <div class="why-items">
+      <div class="why-item">
+        <span class="why-num">01</span>
+        <div>
+          <p class="why-title">Your brand deserves content that reflects its quality</p>
+          <p class="why-body">You've invested in your product, your space, your team. We make sure your online presence says the same thing — with content that's polished, on-brand, and built to convert.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">02</span>
+        <div>
+          <p class="why-title">We manage everything — you manage nothing</p>
+          <p class="why-body">From creator briefing to campaign reporting, we handle every moving part. No chasing, no awkward DMs, no half-delivered briefs. Just results in your inbox.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">03</span>
+        <div>
+          <p class="why-title">A curated network of creators, not a random directory</p>
+          <p class="why-body">We maintain a hand-selected database of creators across Australia — vetted for engagement, authenticity, and niche alignment. Your brand gets matched with creators who genuinely fit.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">04</span>
+        <div>
+          <p class="why-title">Transparent reporting, every single month</p>
+          <p class="why-body">You'll never wonder what you're paying for. Every campaign comes with a clear analytics report covering reach, engagement, content performance, and what we're optimising next.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num">05</span>
+        <div>
+          <p class="why-title">Brisbane-based, Australia-wide</p>
+          <p class="why-body">We're headquartered in Brisbane and work with brands and creators across the country. Local understanding, national reach — tailored campaigns wherever your audience is.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <p class="section-label">What we do</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">IM</div>
+      <h3 class="service-name">Influencer Marketing</h3>
+      <p class="service-body">We connect your brand with hand-picked creators across Australia — nano, micro, and macro — who align with your audience and values. We manage every element of the campaign from brief to delivery, so you get the content and the reach without the admin.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">CP</div>
+      <h3 class="service-name">Content Production</h3>
+      <p class="service-body">Professional photography and video, shot on location. We produce scroll-stopping assets ready for Instagram, TikTok, your website, and beyond — polished, on-brand, and built to perform across every platform you use.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">FM</div>
+      <h3 class="service-name">Fully Managed Campaigns</h3>
+      <p class="service-body">Strategy, creator sourcing, briefing, scheduling, approvals, reporting — handled entirely by us. You stay focused on running your business. We grow your presence and report back each month with clear, measurable results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <p class="section-label">How it works</p>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <p class="how-step-title">Tell us about your brand</p>
+      <p class="how-step-body">We start with a conversation — your goals, your audience, and what you want people to feel when they see your content.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <p class="how-step-title">We build your strategy</p>
+      <p class="how-step-body">We put together a tailored proposal covering creator selection, content direction, platforms, and campaign timeline — all built around your brand.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <p class="how-step-title">We execute, end to end</p>
+      <p class="how-step-body">Creators are briefed, content is produced and approved, campaigns go live. You sit back while we manage every moving part.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">04</div>
+      <p class="how-step-title">You receive clear results</p>
+      <p class="how-step-body">Monthly analytics reports give you full visibility on reach, engagement, and campaign performance — with a clear plan for what's next.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <p class="section-label">About Halfday Media</p>
+  <div class="about-layout">
+    <div>
+      <h2 class="about-heading">A Brisbane-based agency<br>working with brands <em>across Australia.</em></h2>
+      <p class="about-body">Halfday Media was built on a simple idea: great brands deserve content that works as hard as they do. We're a creative agency offering influencer marketing, content production, and fully managed campaigns — with a curated network of creators and a hands-on approach that bigger agencies simply can't offer.</p>
+      <p class="about-body">Whether you're a restaurant, a retailer, a hospitality brand, or a product business — if you want to grow your presence and reach new customers through authentic creator content, we're the team to make it happen.</p>
+      <div class="about-pills">
+        <span class="about-pill">Influencer Marketing</span>
+        <span class="about-pill">Content Strategy</span>
+        <span class="about-pill">Photography</span>
+        <span class="about-pill">Video Production</span>
+        <span class="about-pill">Creator Management</span>
+        <span class="about-pill">Campaign Analytics</span>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="about-stat">
+        <span class="about-stat-num">AU</span>
+        <p class="about-stat-lbl">Australia-wide campaigns</p>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-num">3</span>
+        <p class="about-stat-lbl">Core services</p>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-num">Full</span>
+        <p class="about-stat-lbl">Creator network, all tiers</p>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat-num">Est.</span>
+        <p class="about-stat-lbl">2025 · Halfday Media</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <p class="section-label">Get in touch</p>
+  <div class="contact-layout">
+    <div>
+      <h2 class="contact-heading">Ready to grow your brand? <span>Let's talk.</span></h2>
+      <p class="contact-sub">Tell us about your brand and what you're trying to achieve. We'll come back to you with a tailored proposal — no lock-in, no jargon, just a real conversation about what will actually work.</p>
+      <div class="contact-details">
+        <div class="contact-row">
+          <span class="contact-lbl">Email</span>
+          <a href="mailto:hello@halfdaymedia.com.au" class="contact-val">hello@halfdaymedia.com.au</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">Instagram</span>
+          <a href="https://instagram.com/halfday.media" target="_blank" rel="noopener" class="contact-val">@halfday.media</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">TikTok</span>
+          <a href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener" class="contact-val">@halfdaymedia</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-lbl">Location</span>
+          <span class="contact-val">Brisbane, QLD · Working Australia-wide</span>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" action="mailto:hello@halfdaymedia.com.au" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+      </div>
+      <div class="form-group">
+        <label for="business">Business name</label>
+        <input type="text" id="business" name="business" placeholder="Your Business" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="jane@yourbusiness.com.au" required>
+      </div>
+      <div class="form-group">
+        <label for="interest">What are you looking for?</label>
+        <select id="interest" name="interest">
+          <option value="">Select a service</option>
+          <option value="influencer">Influencer Marketing</option>
+          <option value="content">Content Production</option>
+          <option value="photography">Photography &amp; Video</option>
+          <option value="all">Full Campaign Management</option>
+          <option value="unsure">Not sure yet — let's chat</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell us about your brand</label>
+        <textarea id="message" name="message" placeholder="What you do, who your audience is, and what you're hoping to achieve..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo" aria-label="Halfday Media">
+    <img src="logo.png" alt="Halfday Media" />
+  </a>
+  <span class="footer-copy">© 2025 Halfday Media · Brisbane, QLD · Australia</span>
+  <div class="footer-socials">
+    <a href="https://instagram.com/halfday.media" target="_blank" rel="noopener" class="footer-social-link">Instagram</a>
+    <a href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener" class="footer-social-link">TikTok</a>
+    <a href="mailto:hello@halfdaymedia.com.au" class="footer-social-link">Email us</a>
+  </div>
+</footer>
+
+</body>
+</html>
