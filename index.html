@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halfday Media — Influencer Marketing for Brisbane Restaurants</title>
+  <meta name="description" content="Halfday Media is Brisbane's influencer marketing agency for restaurants. We connect your venue with local food creators to fill tables and grow your following.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red:  #bb1519;
+    --blue: #4a9fd4;
+    --dark: #111111;
+    --mid:  #555555;
+    --bg:   #ffffff;
+    --font-sans:  'DM Sans', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+  }
+  html, body { height: 100%; overflow-x: hidden; }
+  body { font-family: var(--font-sans); background: var(--bg); color: var(--dark); -webkit-font-smoothing: antialiased; }
+  #splash {
+    position: fixed; inset: 0; z-index: 999;
+    background: #eaf4fb;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    cursor: pointer; user-select: none;
+    transition: opacity 0.65s ease;
+  }
+  #splash.fade-out { opacity: 0; pointer-events: none; }
+  .splash-logo { position: absolute; top: 22px; left: 24px; width: 88px; }
+  .splash-logo img { width: 100%; display: block; }
+  .click-hint {
+    position: absolute; bottom: 8%;
+    font-family: var(--font-sans); font-size: 9.5px; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase; color: #555;
+    opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+  }
+  .click-hint.visible { opacity: 1; }
+  .phone-scene {
+    perspective: 2400px; perspective-origin: 52% 48%;
+    width: 280px; height: 510px;
+    position: relative; flex-shrink: 0;
+  }
+  @media (max-height: 760px) { .phone-scene { transform: scale(0.84); transform-origin: center; } }
+  @media (max-height: 650px) { .phone-scene { transform: scale(0.72); transform-origin: center; } }
+  @media (max-height: 560px) { .phone-scene { transform: scale(0.60); transform-origin: center; } }
+  .phone-3d {
+    position: absolute; left: 50%; top: 50%;
+    width: 218px; height: 470px;
+    transform: translateX(-50%) translateY(-50%) rotateX(-5deg) rotateY(20deg);
+    transform-style: preserve-3d;
+    filter: drop-shadow(20px 28px 38px rgba(0,0,0,0.22)) drop-shadow(5px 7px 10px rgba(0,0,0,0.10));
+  }
+  .phone-face { position: absolute; left: 50%; top: 50%; }
+  .phone-face-front {
+    width: 218px; height: 470px;
+    margin-left: -109px; margin-top: -235px;
+    transform: translateZ(6px);
+    border-radius: 44px;
+    background:
+      repeating-linear-gradient(to bottom, transparent 0px, transparent 1.6px, rgba(255,255,255,0.033) 1.6px, rgba(255,255,255,0.033) 2px),
+      linear-gradient(126deg, #c2c2c2 0%, #ececec 10%, #bcbcbc 22%, #dcdcdc 34%, #b4b4b4 46%, #d2d2d2 58%, #e8e8e8 72%, #bebebe 84%, #d6d6d6 100%);
+    box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.92), inset 2px 2px 6px rgba(255,255,255,0.52), inset -1px -2px 4px rgba(0,0,0,0.16);
+    overflow: hidden;
+  }
+  .phone-face-front::before {
+    content: ''; position: absolute; inset: 0; border-radius: 44px;
+    background: linear-gradient(156deg, rgba(255,255,255,0.76) 0%, rgba(255,255,255,0.26) 24%, rgba(255,255,255,0.05) 48%, transparent 60%);
+    z-index: 300; pointer-events: none;
+  }
+  .phone-face-front::after {
+    content: ''; position: absolute; inset: 0; border-radius: 44px;
+    box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.36);
+    z-index: 301; pointer-events: none;
+  }
+  .phone-face-right {
+    width: 12px; height: 444px; margin-left: -6px; margin-top: -222px;
+    transform: rotateY(90deg) translateZ(109px);
+    background: linear-gradient(to right, #767676 0%, #a4a4a4 25%, #c2c2c2 50%, #9e9e9e 75%, #808080 100%);
+    border-radius: 0 3px 3px 0;
+  }
+  .phone-face-bottom {
+    width: 198px; height: 12px; margin-left: -99px; margin-top: -6px;
+    transform: rotateX(90deg) translateZ(235px);
+    background: linear-gradient(to bottom, #7e7e7e 0%, #a6a6a6 45%, #b6b6b6 55%, #969696 100%);
+    border-radius: 0 0 3px 3px;
+  }
+  .phone-screen {
+    position: absolute; top: 7px; left: 7px; right: 7px; bottom: 7px;
+    background: #080808; border-radius: 38px; overflow: hidden; z-index: 1;
+  }
+  .dynamic-island {
+    position: absolute; top: 13px; left: 50%; transform: translateX(-50%);
+    width: 90px; height: 28px; background: #000; border-radius: 20px;
+    box-shadow: 0 0 0 1.5px #080808; z-index: 50;
+  }
+  .ig-ui {
+    position: absolute; inset: 0; background: #fafafa;
+    display: flex; flex-direction: column;
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; overflow: hidden;
+  }
+  .ig-header {
+    display: flex; align-items: center; padding: 54px 10px 7px 10px;
+    background: #fff; border-bottom: 0.5px solid #dbdbdb; flex-shrink: 0;
+  }
+  .ig-avatar-ring {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 1.5px; margin-right: 8px; flex-shrink: 0;
+  }
+  .ig-avatar-ring img {
+    width: 100%; height: 100%; border-radius: 50%;
+    border: 1.5px solid #fff; display: block; object-fit: cover; background: #eaf4fb;
+  }
+  .ig-username { font-size: 11px; font-weight: 600; color: #000; flex: 1; }
+  .ig-more { font-size: 13px; color: #000; letter-spacing: 1.5px; line-height: 1; }
+  .ig-carousel {
+    position: relative; width: 100%; aspect-ratio: 1/1;
+    background: #000; flex-shrink: 0; overflow: hidden; cursor: pointer;
+  }
+  .ig-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s ease; }
+  .ig-slide.active { opacity: 1; }
+  .ig-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ig-heart-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none; z-index: 10;
+  }
+  .ig-heart-pop {
+    font-size: 68px; opacity: 0; transform: scale(0);
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,0.28)); line-height: 1;
+  }
+  .ig-heart-pop.pop { animation: igHeartPop 0.85s ease-out forwards; }
+  @keyframes igHeartPop {
+    0%   { opacity: 0; transform: scale(0); }
+    15%  { opacity: 1; transform: scale(1.28); }
+    35%  { opacity: 1; transform: scale(0.90); }
+    55%  { opacity: 1; transform: scale(1.06); }
+    80%  { opacity: 0.85; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.72); }
+  }
+  .ig-dots {
+    display: flex; justify-content: center; align-items: center;
+    gap: 4px; padding: 5px 0; background: #fff; flex-shrink: 0;
+  }
+  .ig-dot { width: 5px; height: 5px; border-radius: 50%; background: #c8c8c8; transition: background 0.3s; flex-shrink: 0; }
+  .ig-dot.active { background: #3897f0; }
+  .ig-actions { display: flex; align-items: center; padding: 5px 10px; gap: 10px; background: #fff; flex-shrink: 0; }
+  .ig-action-icon { width: 21px; height: 21px; flex-shrink: 0; cursor: pointer; }
+  .ig-action-icon svg { width: 100%; height: 100%; display: block; }
+  .ig-action-bookmark { margin-left: auto; }
+  .ig-likes { padding: 0 10px 3px; font-size: 10.5px; font-weight: 600; background: #fff; color: #000; flex-shrink: 0; }
+  .ig-caption { padding: 2px 10px 8px; font-size: 9.5px; line-height: 1.45; background: #fff; color: #000; flex: 1; overflow: hidden; }
+  .ig-caption b { font-weight: 700; }
+  .ig-caption .tags { color: #3897f0; }
+  #homepage {
+    min-height: 100vh; display: none; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 48px 24px 56px; background: #fff;
+    opacity: 0; transition: opacity 0.55s ease;
+  }
+  #homepage.visible { display: flex; }
+  #homepage.show { opacity: 1; }
+  .home-logo { display: block; width: clamp(260px, 36vw, 480px); margin-bottom: 18px; }
+  .home-logo img { width: 100%; height: auto; display: block; }
+  #carousel2 { position: relative; width: clamp(260px, 36vw, 480px); aspect-ratio: 4/3; overflow: hidden; background: #e0e0e0; }
+  .c2-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s ease; }
+  .c2-slide.active { opacity: 1; }
+  .c2-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .home-nav { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
+  .home-nav a {
+    font-family: var(--font-sans); font-size: 10.5px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--dark); text-decoration: none;
+    padding: 12px 24px; border: 1px solid #ddd; margin: -0.5px;
+    background: #fff; transition: background 0.22s, color 0.22s, border-color 0.22s;
+  }
+  .home-nav a:hover { background: var(--red); color: #fff; border-color: var(--red); z-index: 1; position: relative; }
+  </style>
+</head>
+<body>
+
+<div id="splash">
+  <a class="splash-logo" href="#" onclick="return false;" tabindex="-1">
+    <img src="logo.png" alt="Halfday Media">
+  </a>
+  <div class="phone-scene">
+    <div class="phone-3d">
+      <div class="phone-face phone-face-front">
+        <div class="phone-screen">
+          <div class="dynamic-island"></div>
+          <div class="ig-ui">
+            <div class="ig-header">
+              <div class="ig-avatar-ring"><img src="logo.png" alt="halfday.media"></div>
+              <span class="ig-username">halfday.media</span>
+              <span class="ig-more">···</span>
+            </div>
+            <div class="ig-carousel" id="igCarousel">
+              <div class="ig-slide active"><img src="L1.png" alt="Halfday Media"></div>
+              <div class="ig-slide"><img src="L2.png" alt="Burger"></div>
+              <div class="ig-slide"><img src="L3.png" alt="Ramen"></div>
+              <div class="ig-slide"><img src="L4.png" alt="Taco"></div>
+              <div class="ig-heart-overlay">
+                <span class="ig-heart-pop" id="igHeartPop">&#10084;&#65039;</span>
+              </div>
+            </div>
+            <div class="ig-dots" id="igDots">
+              <div class="ig-dot active"></div>
+              <div class="ig-dot"></div>
+              <div class="ig-dot"></div>
+              <div class="ig-dot"></div>
+            </div>
+            <div class="ig-actions">
+              <div class="ig-action-icon" id="igLikeBtn">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="igHeartPath" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#000" stroke-width="1.8" fill="none"/>
+                </svg>
+              </div>
+              <div class="ig-action-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#000" stroke-width="1.8" fill="none"/></svg>
+              </div>
+              <div class="ig-action-icon">
+                <svg viewBox="0 0 24 24" fill="none"><line x1="22" y1="2" x2="11" y2="13" stroke="#000" stroke-width="1.8"/><polygon points="22 2 15 22 11 13 2 9 22 2" stroke="#000" stroke-width="1.8" fill="none"/></svg>
+              </div>
+              <div class="ig-action-icon ig-action-bookmark">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="#000" stroke-width="1.8" fill="none"/></svg>
+              </div>
+            </div>
+            <div class="ig-likes">1,247 likes</div>
+            <div class="ig-caption">
+              <b>halfday.media</b> Brisbane restaurants — your next regulars are already scrolling. They just haven't found you yet. We're Halfday Media, a Brisbane-based agency connecting local food creators with the restaurants they're made to shout about. Just real content, real creators, and a table full of new faces. We're now onboarding our founding restaurant partners. Drop us a DM or hit the link in bio to get started.<br>
+              <span class="tags">#BrisbaneFood #BrisbaneRestaurants #InfluencerMarketing #FoodMarketing #HalfdayMedia #BrisbaneFoodie #RestaurantMarketing #FoodInfluencer #BrisbaneEats #ContentCreator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-face phone-face-right"></div>
+      <div class="phone-face phone-face-bottom"></div>
+    </div>
+  </div>
+  <p class="click-hint" id="clickHint">Click anywhere to proceed</p>
+</div>
+
+<div id="homepage">
+  <a href="index.html" class="home-logo"><img src="logo.png" alt="Halfday Media"></a>
+  <div id="carousel2">
+    <div class="c2-slide active"><img src="c1.jpg" alt=""></div>
+    <div class="c2-slide"><img src="c2.jpg" alt=""></div>
+    <div class="c2-slide"><img src="c3.jpg" alt=""></div>
+    <div class="c2-slide"><img src="c4.jpg" alt=""></div>
+  </div>
+  <nav class="home-nav">
+    <a href="why-us.html">Why Us</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<script>
+const splash = document.getElementById('splash');
+const homepage = document.getElementById('homepage');
+const clickHint = document.getElementById('clickHint');
+let splashDone = false;
+setTimeout(() => clickHint.classList.add('visible'), 1500);
+function dismissSplash() {
+  if (splashDone) return;
+  splashDone = true;
+  splash.classList.add('fade-out');
+  setTimeout(() => {
+    splash.style.display = 'none';
+    homepage.style.display = 'flex';
+    requestAnimationFrame(() => requestAnimationFrame(() => { homepage.classList.add('show'); startCarousel2(); }));
+  }, 660);
+}
+splash.addEventListener('click', dismissSplash);
+document.addEventListener('keydown', e => { if (!splashDone && (e.key === 'Enter' || e.key === ' ')) dismissSplash(); });
+const igSlides = [...document.querySelectorAll('.ig-slide')];
+const igDotEls = [...document.querySelectorAll('.ig-dot')];
+let igIdx = 0;
+function nextIgSlide() {
+  igSlides[igIdx].classList.remove('active'); igDotEls[igIdx].classList.remove('active');
+  igIdx = (igIdx + 1) % igSlides.length;
+  igSlides[igIdx].classList.add('active'); igDotEls[igIdx].classList.add('active');
+}
+setInterval(nextIgSlide, 1500);
+const igCarousel = document.getElementById('igCarousel');
+const igHeartPop = document.getElementById('igHeartPop');
+const igHeartPath = document.getElementById('igHeartPath');
+let lastTap = 0, isLiked = false;
+function triggerHeart() {
+  igHeartPop.classList.remove('pop'); void igHeartPop.offsetWidth; igHeartPop.classList.add('pop');
+  if (!isLiked) { isLiked = true; igHeartPath.setAttribute('fill', '#ed4956'); igHeartPath.setAttribute('stroke', '#ed4956'); }
+}
+igCarousel.addEventListener('click', () => { const now = Date.now(); if (now - lastTap < 340) triggerHeart(); lastTap = now; });
+igCarousel.addEventListener('touchend', e => { const now = Date.now(); if (now - lastTap < 340) { triggerHeart(); e.preventDefault(); } lastTap = now; }, { passive: false });
+setTimeout(() => { triggerHeart(); setInterval(triggerHeart, 9000); }, 2800);
+const c2Slides = [...document.querySelectorAll('.c2-slide')];
+let c2Idx = 0, c2Timer = null;
+function nextC2Slide() { c2Slides[c2Idx].classList.remove('active'); c2Idx = (c2Idx + 1) % c2Slides.length; c2Slides[c2Idx].classList.add('active'); }
+function startCarousel2() { if (c2Timer) return; c2Timer = setInterval(nextC2Slide, 1000); }
+</script>
+</body>
+</html>
