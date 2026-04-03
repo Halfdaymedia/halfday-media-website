@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Halfday Media | Get in Touch</title>
+  <meta name="description" content="Ready to fill your restaurant with new regulars? Get in touch with Halfday Media — Brisbane's influencer marketing agency for food and hospitality.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="header-logo"><img src="logo.png" alt="Halfday Media"></a>
+  <nav class="site-nav">
+    <a href="why-us.html">Why Us</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+<main class="page-main">
+  <div class="page-hero">
+    <h1>Let's talk</h1>
+    <p>Ready to fill your restaurant with new regulars? Drop us a message and we'll get back to you within one business day.</p>
+  </div>
+  <div class="contact-layout">
+    <div>
+      <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
+        <div class="form-group"><label for="name">Your name</label><input type="text" id="name" name="name" required placeholder="Josie Smith"></div>
+        <div class="form-group"><label for="restaurant">Restaurant name</label><input type="text" id="restaurant" name="restaurant" required placeholder="The Corner Table, Brisbane"></div>
+        <div class="form-group"><label for="email">Email address</label><input type="email" id="email" name="email" required placeholder="hello@yourrestaurant.com"></div>
+        <div class="form-group"><label for="phone">Phone number</label><input type="tel" id="phone" name="phone" placeholder="0400 000 000"></div>
+        <div class="form-group">
+          <label for="package">Interested in</label>
+          <select id="package" name="package">
+            <option value="" disabled selected>Select a package...</option>
+            <option>Taste Test — $397</option>
+            <option>On the Menu — $897</option>
+            <option>Full Table — $1,497</option>
+            <option>Chef's Table — Custom pricing</option>
+            <option>Not sure yet — let's chat</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="message">Tell us about your restaurant</label><textarea id="message" name="message" placeholder="Cuisine type, suburb, what you're hoping to achieve..."></textarea></div>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h2>Other ways to reach us</h2>
+      <p>We're a small team and we respond to every message personally. If you're not a forms person, reach out directly — we'd genuinely love to hear from you.</p>
+      <div style="margin-top: 32px;">
+        <a class="contact-link" href="mailto:hello@halfdaymedia.com.au"><div><span class="contact-link-label">Email</span>hello@halfdaymedia.com.au</div></a>
+        <a class="contact-link" href="https://instagram.com/halfday.media" target="_blank" rel="noopener"><div><span class="contact-link-label">Instagram</span>@halfday.media</div></a>
+        <a class="contact-link" href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener"><div><span class="contact-link-label">TikTok</span>@halfdaymedia</div></a>
+        <a class="contact-link" href="https://www.halfdaymedia.com.au" target="_blank" rel="noopener"><div><span class="contact-link-label">Website</span>www.halfdaymedia.com.au</div></a>
+      </div>
+      <p style="margin-top:36px;font-size:13px;color:var(--muted);line-height:1.7;">Based in Brisbane, Queensland.<br>Working with restaurants Australia-wide.</p>
+    </div>
+  </div>
+</main>
+<footer class="site-footer">
+  <span>&copy; 2025 Halfday Media. Brisbane, Australia.</span>
+  <span><a href="mailto:hello@halfdaymedia.com.au">hello@halfdaymedia.com.au</a> &nbsp;&middot;&nbsp; <a href="https://instagram.com/halfday.media" target="_blank" rel="noopener">@halfday.media</a> &nbsp;&middot;&nbsp; <a href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener">@halfdaymedia</a></span>
+</footer>
+</body>
+</html>
