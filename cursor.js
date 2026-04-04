@@ -17,3 +17,4 @@
     dot.style.top  = e.clientY + 'px';
   });
 })();
+
