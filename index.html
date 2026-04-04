@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
-  /* Custom cursor */
+    /* Custom cursor */
   @media (hover: hover) and (pointer: fine) {
     *, *::before, *::after { cursor: none !important; }
   }
@@ -457,17 +457,18 @@
    CUSTOM CURSOR
 ================================================================ */
 (function () {
-  const s = document.createElement('style');
-  s.textContent = '@media (hover:hover) and (pointer:fine){*,*::before,*::after{cursor:none!important}}';
-  document.head.appendChild(s);
   const dot = document.createElement('div');
-  dot.style.cssText = 'position:fixed;width:10px;height:10px;background:#4a9fd4;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);top:-20px;left:-20px;';
+  dot.style.cssText = 'position:fixed;width:10px;height:10px;background:#4a9fd4;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);top:50vh;left:50vw;';
   document.body.appendChild(dot);
-  document.addEventListener('mousemove', e => {
+  const s = document.createElement('style');
+  s.textContent = '@media (hover:hover) and (pointer:fine){html,body,*{cursor:none!important}}';
+  document.head.appendChild(s);
+  document.addEventListener('mousemove', function(e) {
     dot.style.left = e.clientX + 'px';
     dot.style.top  = e.clientY + 'px';
   });
 })();
+
 
 /* ================================================================
    SPLASH
@@ -505,6 +506,7 @@ const phoneGlare = document.getElementById('phoneGlare');
 let floatT   = 0;
 let mouseNX  = 0.5, mouseNY = 0.5;
 let smoothRX = -5,  smoothRY = 20;
+let glareFrame = 0;
 
 document.addEventListener('mousemove', e => {
   mouseNX = e.clientX / window.innerWidth;
@@ -512,6 +514,8 @@ document.addEventListener('mousemove', e => {
 });
 
 (function tick() {
+  if (splashDone) return;
+
   floatT += 0.010;
   const floatPx = Math.sin(floatT) * 13;
 
@@ -524,13 +528,16 @@ document.addEventListener('mousemove', e => {
     `translateX(-50%) translateY(calc(-50% + ${floatPx.toFixed(2)}px)) ` +
     `rotateX(${smoothRX.toFixed(2)}deg) rotateY(${smoothRY.toFixed(2)}deg)`;
 
-  const gx = (38 + dx * 44).toFixed(1);
-  const gy = (22 + dy * 38).toFixed(1);
-  phoneGlare.style.background =
-    `radial-gradient(ellipse at ${gx}% ${gy}%, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.10) 30%, transparent 58%)`;
+  if (++glareFrame % 3 === 0) {
+    const gx = (38 + dx * 44).toFixed(1);
+    const gy = (22 + dy * 38).toFixed(1);
+    phoneGlare.style.background =
+      `radial-gradient(ellipse at ${gx}% ${gy}%, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.10) 30%, transparent 58%)`;
+  }
 
   requestAnimationFrame(tick);
 })();
+
 
 /* ================================================================
    IG CAROUSEL — swipe
