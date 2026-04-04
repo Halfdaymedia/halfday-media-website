@@ -10,8 +10,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <header class="site-header">
-  <a href="index.html" class="header-logo"><img src="logo.png" alt="Halfday Media"></a>
+  <a href="index.html" class="header-logo">
+    <img src="logo.png" alt="Halfday Media">
+  </a>
   <nav class="site-nav">
     <a href="why-us.html">Why Us</a>
     <a href="services.html">Services</a>
@@ -19,49 +22,135 @@
     <a href="contact.html" class="active">Contact</a>
   </nav>
 </header>
+
 <main class="page-main">
+
   <div class="page-hero">
     <h1>Let's talk</h1>
     <p>Ready to fill your restaurant with new regulars? Drop us a message and we'll get back to you within one business day.</p>
   </div>
+
   <div class="contact-layout">
+
+    <!-- CONTACT FORM -->
     <div>
       <form name="contact" method="POST" data-netlify="true" action="/thanks.html">
-        <div class="form-group"><label for="name">Your name</label><input type="text" id="name" name="name" required placeholder="Josie Smith"></div>
-        <div class="form-group"><label for="restaurant">Restaurant name</label><input type="text" id="restaurant" name="restaurant" required placeholder="The Corner Table, Brisbane"></div>
-        <div class="form-group"><label for="email">Email address</label><input type="email" id="email" name="email" required placeholder="hello@yourrestaurant.com"></div>
-        <div class="form-group"><label for="phone">Phone number</label><input type="tel" id="phone" name="phone" placeholder="0400 000 000"></div>
         <div class="form-group">
-          <label for="package">Interested in</label>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="Josie Smith">
+        </div>
+        <div class="form-group">
+          <label for="restaurant">Restaurant name</label>
+          <input type="text" id="restaurant" name="restaurant" required placeholder="The Corner Table, Brisbane">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required placeholder="hello@yourrestaurant.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="0400 000 000">
+        </div>
+        <div class="form-group">
+          <label for="package">What are you interested in?</label>
           <select id="package" name="package">
-            <option value="" disabled selected>Select a package...</option>
-            <option>Taste Test — $397</option>
-            <option>On the Menu — $897</option>
-            <option>Full Table — $1,497</option>
-            <option>Chef's Table — Custom pricing</option>
+            <option value="" disabled selected>Select an option...</option>
+            <option>Starter campaign</option>
+            <option>Growth campaign</option>
+            <option>Premium campaign</option>
+            <option>Ongoing partnership</option>
             <option>Not sure yet — let's chat</option>
           </select>
         </div>
-        <div class="form-group"><label for="message">Tell us about your restaurant</label><textarea id="message" name="message" placeholder="Cuisine type, suburb, what you're hoping to achieve..."></textarea></div>
+        <div class="form-group">
+          <label for="message">Tell us about your restaurant</label>
+          <textarea id="message" name="message" rows="6" placeholder="Cuisine type, suburb, what you're hoping to achieve..."></textarea>
+        </div>
         <button type="submit" class="btn">Send message</button>
       </form>
     </div>
+
+    <!-- CONTACT INFO -->
     <div class="contact-info">
-      <h2>Other ways to reach us</h2>
-      <p>We're a small team and we respond to every message personally. If you're not a forms person, reach out directly — we'd genuinely love to hear from you.</p>
-      <div style="margin-top: 32px;">
-        <a class="contact-link" href="mailto:hello@halfdaymedia.com.au"><div><span class="contact-link-label">Email</span>hello@halfdaymedia.com.au</div></a>
-        <a class="contact-link" href="https://instagram.com/halfday.media" target="_blank" rel="noopener"><div><span class="contact-link-label">Instagram</span>@halfday.media</div></a>
-        <a class="contact-link" href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener"><div><span class="contact-link-label">TikTok</span>@halfdaymedia</div></a>
-        <a class="contact-link" href="https://www.halfdaymedia.com.au" target="_blank" rel="noopener"><div><span class="contact-link-label">Website</span>www.halfdaymedia.com.au</div></a>
+      <h2>Say hello directly</h2>
+      <p>We're a small team and we respond to every message personally. Prefer to skip the form? Reach out directly — we'd love to hear from you.</p>
+
+      <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 16px;">
+
+        <a href="mailto:hello@halfdaymedia.com.au"
+           style="display:flex; align-items:center; gap:18px; padding:20px 24px;
+                  border:1px solid var(--border); text-decoration:none; color:var(--dark);
+                  transition:border-color 0.2s, color 0.2s;">
+          <div style="width:40px;height:40px;background:var(--light);border-radius:50%;
+                      display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Email</div>
+            <div style="font-size:15px;">hello@halfdaymedia.com.au</div>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/halfday.media" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; gap:18px; padding:20px 24px;
+                  border:1px solid var(--border); text-decoration:none; color:var(--dark);
+                  transition:border-color 0.2s, color 0.2s;">
+          <div style="width:40px;height:40px;background:var(--light);border-radius:50%;
+                      display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="var(--blue)" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">Instagram</div>
+            <div style="font-size:15px;">@halfday.media</div>
+          </div>
+        </a>
+
+        <a href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; gap:18px; padding:20px 24px;
+                  border:1px solid var(--border); text-decoration:none; color:var(--dark);
+                  transition:border-color 0.2s, color 0.2s;">
+          <div style="width:40px;height:40px;background:var(--light);border-radius:50%;
+                      display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;">TikTok</div>
+            <div style="font-size:15px;">@halfdaymedia</div>
+          </div>
+        </a>
+
       </div>
-      <p style="margin-top:36px;font-size:13px;color:var(--muted);line-height:1.7;">Based in Brisbane, Queensland.<br>Working with restaurants Australia-wide.</p>
+
+      <p style="margin-top: 32px; font-size: 13px; color: var(--muted); line-height: 1.8;">
+        Based in Brisbane, Queensland.<br>
+        Working with restaurants Australia-wide.
+      </p>
     </div>
-  </div>
+
+  </div><!-- /contact-layout -->
+
 </main>
+
 <footer class="site-footer">
   <span>&copy; 2025 Halfday Media. Brisbane, Australia.</span>
-  <span><a href="mailto:hello@halfdaymedia.com.au">hello@halfdaymedia.com.au</a> &nbsp;&middot;&nbsp; <a href="https://instagram.com/halfday.media" target="_blank" rel="noopener">@halfday.media</a> &nbsp;&middot;&nbsp; <a href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener">@halfdaymedia</a></span>
+  <span>
+    <a href="mailto:hello@halfdaymedia.com.au">hello@halfdaymedia.com.au</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://instagram.com/halfday.media" target="_blank" rel="noopener">@halfday.media</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://tiktok.com/@halfdaymedia" target="_blank" rel="noopener">@halfdaymedia</a>
+  </span>
 </footer>
+
+<script src="cursor.js"></script>
 </body>
 </html>
