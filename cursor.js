@@ -1,5 +1,6 @@
-/* Custom cursor — small blue dot, used on all pages */
+/* Custom cursor — small blue dot, used on all pages (desktop only) */
 (function () {
+  if (window.matchMedia('(hover:none),(pointer:coarse)').matches) return;
   /* Create dot first, then hide native cursor — no gap */
   const dot = document.createElement('div');
   dot.style.cssText =
