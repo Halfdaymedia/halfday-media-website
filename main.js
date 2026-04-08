@@ -2,6 +2,7 @@
    CUSTOM CURSOR — dot first, then hide native cursor (no gap)
 ================================================================ */
 (function () {
+  if (window.matchMedia('(hover:none),(pointer:coarse)').matches) return;
   var dot = document.createElement('div');
   dot.style.cssText = 'position:fixed;width:10px;height:10px;background:#4a9fd4;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);top:50vh;left:50vw;';
   document.body.appendChild(dot);
